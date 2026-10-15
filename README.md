@@ -1,5 +1,5 @@
 # Name Sorter
-[![Java CI with Maven](https://github.com/E-E-S-H/name-sorter/actions/workflows/ci.yml/badge.svg)](https://github.com/E-E-S-H/name-sorter/actions/workflows/ci.yml)
+
 A command-line application that sorts a list of names from a file by **last name first**, then by **given names**. Built with Java 17, following SOLID design principles.
 
 ---
