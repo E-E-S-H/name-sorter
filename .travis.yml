@@ -1,0 +1,28 @@
+# Travis CI — Build & Test Pipeline
+#
+# Triggers automatically on every push and pull request to any branch.
+# Steps: install Java 17 → compile → run all tests.
+# Build fails if any test fails.
+#
+# See: https://docs.travis-ci.com/user/languages/java/
+
+language: java
+
+# Use OpenJDK 17 (LTS) — matches the project's Java version target
+jdk:
+  - openjdk17
+
+# 'mvn clean verify' does:
+#   clean   → delete previous build artifacts (ensures a fresh build)
+#   verify  → compile, run unit tests, and run integration tests
+# This is preferred over 'mvn test' because 'verify' also runs the
+# integration-test and verify lifecycle phases.
+script:
+  - mvn clean verify
+
+# Cache the local Maven repository between builds.
+# This avoids re-downloading all dependencies on every CI run,
+# dramatically speeding up build times.
+cache:
+  directories:
+    - $HOME/.m2
