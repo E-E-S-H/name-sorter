@@ -4,7 +4,7 @@ A command-line application that sorts a list of names from a file by **last name
 
 ---
 
-## Requirements
+## REquirements
 
 - Java 17 or higher
 - Maven 3.8+
