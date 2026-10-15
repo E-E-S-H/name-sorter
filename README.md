@@ -1,7 +1,5 @@
 # Name Sorter
-
-[![Build Status](https://travis-ci.com/E-E-S-H/name-sorter.svg?branch=main)](https://travis-ci.com/E-E-S-H/name-sorter)
-
+[![Java CI with Maven](https://github.com/E-E-S-H/name-sorter/actions/workflows/ci.yml/badge.svg)](https://github.com/E-E-S-H/name-sorter/actions/workflows/ci.yml)
 A command-line application that sorts a list of names from a file by **last name first**, then by **given names**. Built with Java 17, following SOLID design principles.
 
 ---
@@ -100,7 +98,8 @@ src/main/java/com/dyedurham/namesorter/
 
 ## CI/CD
 
-This project uses **Travis CI**. On every push or pull request, Travis will:
-1. Install OpenJDK 17
-2. Run `mvn clean verify` (compile + all tests)
-3. Fail the build if any test fails
+This project uses **GitHub Actions** for continuous integration. On every push or pull request to `main`, the automated workflow:
+1. Sets up JDK 17 (Temurin)
+2. Runs `mvn -B clean verify` (compilation + all 55 tests)
+3. Executes an end-to-end smoke test against the packaged JAR
+4. Fails the build if any test fails
